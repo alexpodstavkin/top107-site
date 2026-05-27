@@ -21,17 +21,12 @@ export default function FinalCta() {
                 letterSpacing: '-0.02em',
               }}
             >
-              {hero.title.pre}{' '}
-              <span className="whitespace-nowrap" style={{ color: 'var(--accent-heliotrope)' }}>
-                {hero.title.accent.replace(/ /g, ' ')}
-              </span>
-              {hero.title.mid}
-              <span className="whitespace-nowrap">{hero.title.nowrap.replace(/ /g, ' ')}</span>
-              {hero.title.post}
+              <span style={{ color: 'var(--accent-heliotrope)' }}>{hero.title.accent.replace(/ /g, ' ')}</span>
+              {hero.title.rest.replace(/ /g, ' ')}
             </h2>
 
             <p className="lead mx-auto mb-8 max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
-              {hero.lead}
+              {hero.lead.replace(/ /g, ' ')}
             </p>
 
             <a

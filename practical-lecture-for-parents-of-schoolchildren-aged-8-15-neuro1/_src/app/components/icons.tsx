@@ -51,3 +51,33 @@ export const IconShield = ({ size = 14 }: { size?: number }) => (
     <path d="M5 7l1.5 1.5L9 5.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
+
+export const IconClock = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
+    <path d="M12 7v5l3.5 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+  </svg>
+)
+
+export const IconRocket = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+    <path d="M14.5 4.5C16 3.5 18 3 20 3.5 20.5 5.5 20 7.5 19 9l-6 6c-1.5 1-3 1.5-4.5 1L8 16l-1.5-1.5L8 13c-.5-1.5 0-3 1-4.5l5.5-4z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+    <path d="M9 17l-2 2M11 19l-2 2M6 14l-2 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <circle cx="15.5" cy="8.5" r="1.5" stroke="currentColor" strokeWidth="1.6" />
+  </svg>
+)
+
+export const IconTarget = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.8" />
+    <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="1.8" />
+    <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+  </svg>
+)
+
+export const IconShieldGuard = ({ size = 22 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden>
+    <path d="M12 3l8 3v6c0 4.5-3.5 8-8 9-4.5-1-8-4.5-8-9V6l8-3z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+    <path d="M8.5 12l2.5 2.5L16 10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)

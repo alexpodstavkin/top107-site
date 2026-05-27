@@ -7,7 +7,32 @@ const iconMap = {
   chat: IconChat,
 }
 
-export default function Gifts({ id }: { id: string }) {
+export default function Gifts({ id, variant = 'full' }: { id: string; variant?: 'full' | 'compact' }) {
+  if (variant === 'compact') {
+    return (
+      <section id={id} aria-label="Подарки участникам" className="section-tinted">
+        <div className="container-zc" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+          <div className="gifts-strip">
+            <span className="gifts-strip-label">3 подарка участникам:</span>
+            <ul className="gifts-strip-list">
+              {gifts.map((g, i) => {
+                const Icon = iconMap[g.icon as keyof typeof iconMap]
+                return (
+                  <li key={i} className="gifts-strip-item">
+                    <span className="gifts-strip-icon" aria-hidden>
+                      <Icon size={16} />
+                    </span>
+                    <span className="gifts-strip-text">{g.title.replace(/ /g, ' ')}</span>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section id={id} className="section section-tinted">
       <div className="container-zc">

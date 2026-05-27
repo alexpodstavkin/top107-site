@@ -1,5 +1,6 @@
 import Hero from './components/Hero'
 import Gifts from './components/Gifts'
+import WhySummer from './components/WhySummer'
 import Prices from './components/Prices'
 import Program from './components/Program'
 import Research from './components/Research'
@@ -17,7 +18,8 @@ export default function Page() {
     <main id="main">
       <UtmCapture />
       <Hero />
-      <Gifts id="gifts-top" />
+      <Gifts id="gifts-top" variant="compact" />
+      <WhySummer />
       <Prices />
       <Program />
       <Research />
