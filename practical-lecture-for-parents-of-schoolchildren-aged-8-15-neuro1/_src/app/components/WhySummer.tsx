@@ -41,7 +41,9 @@ export default function WhySummer() {
         <div className="mt-6 md:mt-8 reason-cta">
           <div className="reason-cta-inner">
             <p className="reason-cta-text">
-              {summerReasons.ctaText.replace(/ /g, ' ')}
+              {summerReasons.ctaLines.map((line, i) => (
+                <span key={i} className="reason-cta-line">{line.replace(/ /g, ' ')}</span>
+              ))}
             </p>
             <a href="#register" data-open-register="" className="btn btn-cta reason-cta-btn">
               {summerReasons.ctaLabel}

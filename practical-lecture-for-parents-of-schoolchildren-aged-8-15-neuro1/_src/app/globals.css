@@ -535,6 +535,12 @@
     margin: 0;
   }
   @media (min-width: 768px) { .reason-cta-text { font-size: 1.125rem; } }
+  .reason-cta-line { display: inline; }
+  .reason-cta-line + .reason-cta-line { margin-left: 4px; }
+  @media (min-width: 768px) {
+    .reason-cta-line { display: block; }
+    .reason-cta-line + .reason-cta-line { margin-left: 0; }
+  }
   .reason-cta-btn { flex-shrink: 0; }
   @media (max-width: 640px) { .reason-cta-btn { width: 100%; justify-content: center; } }
 
