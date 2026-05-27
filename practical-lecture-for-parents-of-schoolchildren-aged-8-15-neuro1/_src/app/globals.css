@@ -550,4 +550,67 @@
     border: 1px solid rgba(255,255,255,0.10);
     box-shadow: 0 30px 60px -24px rgba(0,0,0,0.45);
   }
+
+  /* === Hero CTA — extra-wide button + seats counter beside it === */
+  .hero-btn-cta {
+    min-width: 18rem;
+    padding-left: 36px;
+    padding-right: 36px;
+    justify-content: center;
+  }
+  @media (max-width: 640px) {
+    .hero-btn-cta { min-width: 0; width: 100%; padding-left: 24px; padding-right: 24px; }
+  }
+  .hero-cta-row { gap: 16px 20px; }
+
+  .seats-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    font-size: 0.875rem;
+    line-height: 1.2;
+    color: rgba(255,255,255,0.82);
+    white-space: nowrap;
+  }
+  .seats-counter-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #FF4D6D;
+    box-shadow: 0 0 0 0 rgba(255,77,109,0.65);
+    animation: seatsPulse 1.6s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes seatsPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,77,109,0.55); }
+    70% { box-shadow: 0 0 0 8px rgba(255,77,109,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,77,109,0); }
+  }
+  .seats-counter-label {
+    font-weight: 500;
+    color: rgba(255,255,255,0.82);
+  }
+  .seats-counter-value {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .seats-counter-num {
+    font-weight: 800;
+    color: var(--n-white);
+    font-size: 1rem;
+  }
+  .seats-counter-sep {
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+  }
+  .seats-counter-total {
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
 }

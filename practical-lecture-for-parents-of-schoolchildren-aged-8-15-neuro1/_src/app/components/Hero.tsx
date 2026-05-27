@@ -2,6 +2,7 @@ import { hero } from '@/lib/content'
 import { IconArrow } from './icons'
 import { asset } from '@/lib/asset'
 import EventDatePill from './EventDatePill'
+import SeatsCounter from './SeatsCounter'
 
 export default function Hero() {
   return (
@@ -28,11 +29,12 @@ export default function Hero() {
               {hero.lead.replace(/ /g, ' ')}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <a href="#register" data-open-register="" className="btn btn-cta">
+            <div className="flex flex-wrap items-center gap-4 hero-cta-row">
+              <a href="#register" data-open-register="" className="btn btn-cta hero-btn-cta">
                 {hero.cta}
                 <IconArrow />
               </a>
+              <SeatsCounter />
             </div>
           </div>
 
