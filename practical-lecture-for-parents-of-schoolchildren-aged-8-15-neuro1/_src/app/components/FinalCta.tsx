@@ -1,6 +1,7 @@
-import { finalCta } from '@/lib/content'
+import { hero } from '@/lib/content'
 import { IconArrow } from './icons'
 import EventDatePill from './EventDatePill'
+import SeatsCounter from './SeatsCounter'
 
 export default function FinalCta() {
   return (
@@ -21,25 +22,28 @@ export default function FinalCta() {
                 letterSpacing: '-0.02em',
               }}
             >
-              {finalCta.title.pre.replace(/ /g, ' ')}
               <span style={{ color: 'var(--accent-heliotrope)' }}>
-                {finalCta.title.accent.replace(/ /g, ' ')}
+                {hero.title.accent.replace(/ /g, ' ')}
               </span>
+              {hero.title.rest.replace(/ /g, ' ')}
             </h2>
 
             <p className="lead mx-auto mb-8 max-w-2xl" style={{ color: 'rgba(255,255,255,0.82)' }}>
-              {finalCta.lead.replace(/ /g, ' ')}
+              {hero.lead.replace(/ /g, ' ')}
             </p>
 
-            <a
-              href="#register"
-              data-open-register=""
-              className="btn btn-cta"
-              style={{ padding: '18px 32px', fontSize: '1.0625rem' }}
-            >
-              {finalCta.cta}
-              <IconArrow />
-            </a>
+            <div className="hero-cta-row justify-center" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '16px 20px' }}>
+              <a
+                href="#register"
+                data-open-register=""
+                className="btn btn-cta hero-btn-cta"
+                style={{ padding: '18px 32px', fontSize: '1.0625rem' }}
+              >
+                Принять участие бесплатно
+                <IconArrow />
+              </a>
+              <SeatsCounter />
+            </div>
           </div>
         </div>
       </div>
