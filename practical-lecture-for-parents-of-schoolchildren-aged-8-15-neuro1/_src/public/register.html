@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация · Зерокодер</title>
+  <base target="_parent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: 'Manrope', system-ui, sans-serif;
+      color: #222;
+      background: transparent;
+      -webkit-font-smoothing: antialiased;
+    }
+    body > *, body form, body iframe { max-width: 100% !important; width: 100% !important; }
+    body iframe { border: 0; display: block; }
+    #wrap { width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <!-- GetCourse widget: receives current URL with UTM via location.search and document.referrer -->
+    <script id="9eee9f01756524c725a4b36e332d4e4049c53437" src="https://university.zerocoder.ru/pl/lite/widget/script?id=1578138"></script>
+  </div>
+  <script>
+    // Report content height to parent so the modal can size the iframe
+    function measure() {
+      var bottom = 0;
+      var nodes = document.body.querySelectorAll('*');
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        if (n.tagName === 'SCRIPT') continue;
+        var r = n.getBoundingClientRect();
+        if (r.height === 0 && r.width === 0) continue;
+        if (r.bottom > bottom) bottom = r.bottom;
+      }
+      return Math.ceil(bottom);
+    }
+    var lastH = 0;
+    function tick() {
+      var h = measure();
+      if (h > 0 && Math.abs(h - lastH) > 2) {
+        lastH = h;
+        window.parent.postMessage({ type: 'widget-height', height: h }, '*');
+      }
+    }
+    setInterval(tick, 200);
+    window.addEventListener('load', tick);
+    window.addEventListener('resize', tick);
+
+    // Best-effort: copy UTM from window.name (set by parent) into hidden form inputs once form renders
+    function applyUtmToHiddenInputs() {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var utm = {};
+        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','yclid','fbclid','roistat'].forEach(function(k){
+          var v = params.get(k);
+          if (v) utm[k] = v;
+        });
+        if (!Object.keys(utm).length) return;
+        var inputs = document.querySelectorAll('input[name], select[name], textarea[name]');
+        inputs.forEach(function (el) {
+          var name = (el.getAttribute('name') || '').toLowerCase();
+          if (utm[name]) el.value = utm[name];
+        });
+      } catch (e) {}
+    }
+    var t = setInterval(applyUtmToHiddenInputs, 500);
+    setTimeout(function () { clearInterval(t); }, 15000);
+  </script>
+</body>
+</html>
