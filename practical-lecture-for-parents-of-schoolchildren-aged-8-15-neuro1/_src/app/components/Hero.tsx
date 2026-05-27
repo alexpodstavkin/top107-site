@@ -42,7 +42,7 @@ export default function Hero() {
               style={{ maxWidth: '34rem' }}
             >
               <img
-                src={asset('/kids-hero.png')}
+                src={asset('/kids-hero.jpg')}
                 alt="Ученики за уроком"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="eager"

@@ -11,16 +11,23 @@ export default function Gifts({ id, variant = 'full' }: { id: string; variant?: 
   if (variant === 'compact') {
     return (
       <section id={id} aria-label="Подарки участникам" className="section-tinted">
-        <div className="container-zc" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+        <div className="container-zc" style={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
           <div className="gifts-strip">
-            <span className="gifts-strip-label">3 подарка участникам:</span>
+            <div className="gifts-strip-head">
+              <span className="gifts-strip-eyebrow">Бонус для&nbsp;участников</span>
+              <span className="gifts-strip-label">
+                Дарим три подарка на&nbsp;сумму{' '}
+                <span className="gifts-strip-amount">5&nbsp;000&nbsp;₽</span>
+                {' '}тем, кто останется до&nbsp;конца
+              </span>
+            </div>
             <ul className="gifts-strip-list">
               {gifts.map((g, i) => {
                 const Icon = iconMap[g.icon as keyof typeof iconMap]
                 return (
                   <li key={i} className="gifts-strip-item">
                     <span className="gifts-strip-icon" aria-hidden>
-                      <Icon size={16} />
+                      <Icon size={18} />
                     </span>
                     <span className="gifts-strip-text">{g.title.replace(/ /g, ' ')}</span>
                   </li>

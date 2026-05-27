@@ -73,7 +73,7 @@ export default function FloatingCta() {
   return (
     <div id="floatCta" ref={ref} className="float-cta">
       <a href="#register" data-open-register="" className="btn btn-cta">
-        {hero.cta}
+        Принять участие бесплатно
         <IconArrow />
       </a>
     </div>

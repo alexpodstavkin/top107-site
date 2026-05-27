@@ -1,4 +1,4 @@
-import { hero } from '@/lib/content'
+import { finalCta } from '@/lib/content'
 import { IconArrow } from './icons'
 import EventDatePill from './EventDatePill'
 
@@ -21,12 +21,14 @@ export default function FinalCta() {
                 letterSpacing: '-0.02em',
               }}
             >
-              <span style={{ color: 'var(--accent-heliotrope)' }}>{hero.title.accent.replace(/ /g, ' ')}</span>
-              {hero.title.rest.replace(/ /g, ' ')}
+              {finalCta.title.pre.replace(/ /g, ' ')}
+              <span style={{ color: 'var(--accent-heliotrope)' }}>
+                {finalCta.title.accent.replace(/ /g, ' ')}
+              </span>
             </h2>
 
-            <p className="lead mx-auto mb-8 max-w-2xl" style={{ color: 'rgba(255,255,255,0.78)' }}>
-              {hero.lead.replace(/ /g, ' ')}
+            <p className="lead mx-auto mb-8 max-w-2xl" style={{ color: 'rgba(255,255,255,0.82)' }}>
+              {finalCta.lead.replace(/ /g, ' ')}
             </p>
 
             <a
@@ -35,7 +37,7 @@ export default function FinalCta() {
               className="btn btn-cta"
               style={{ padding: '18px 32px', fontSize: '1.0625rem' }}
             >
-              {hero.cta}
+              {finalCta.cta}
               <IconArrow />
             </a>
           </div>
