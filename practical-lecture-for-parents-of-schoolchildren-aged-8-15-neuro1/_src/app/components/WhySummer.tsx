@@ -32,21 +32,22 @@ export default function WhySummer() {
                     <span className="reason-stat-label">{r.statLabel.replace(/ /g, ' ')}</span>
                   </div>
                 </div>
-                <h3 className="reason-title">{r.title.replace(/ /g, ' ')}</h3>
                 <p className="reason-text">{r.text.replace(/ /g, ' ')}</p>
               </div>
             )
           })}
         </div>
 
-        <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-between reason-cta">
-          <p className="body-strong reason-cta-text">
-            До{' '}1{' '}сентября меньше времени, чем кажется. Зарегистрируйтесь сейчас{' '}— участие бесплатное, длится 60{' '}минут.
-          </p>
-          <a href="#register" data-open-register="" className="btn btn-cta reason-cta-btn">
-            {summerReasons.ctaLabel}
-            <IconArrow />
-          </a>
+        <div className="mt-6 md:mt-8 reason-cta">
+          <div className="reason-cta-inner">
+            <p className="reason-cta-text">
+              {summerReasons.ctaText.replace(/ /g, ' ')}
+            </p>
+            <a href="#register" data-open-register="" className="btn btn-cta reason-cta-btn">
+              {summerReasons.ctaLabel}
+              <IconArrow />
+            </a>
+          </div>
         </div>
       </div>
     </section>

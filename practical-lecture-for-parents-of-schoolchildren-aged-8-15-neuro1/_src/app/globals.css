@@ -465,36 +465,47 @@
     line-height: 1.25;
     margin-top: 4px;
   }
-  .reason-title {
-    font-size: 1.0625rem;
-    font-weight: 700;
-    line-height: 1.25;
-    color: var(--n-ink);
-    margin-bottom: 8px;
-  }
-  @media (min-width: 768px) { .reason-title { font-size: 1.125rem; } }
   .reason-text {
     font-size: 0.9375rem;
-    line-height: 1.45;
-    color: var(--n-ink-2);
-  }
-  .reason-cta {
-    background: var(--n-white);
-    border: 1px solid #E8E5EE;
-    border-radius: 16px;
-    padding: 18px 22px;
-    box-shadow: 0 8px 24px -12px rgba(34,34,34,0.10);
-  }
-  @media (min-width: 768px) { .reason-cta { padding: 22px 28px; } }
-  .reason-cta-text {
+    line-height: 1.5;
     color: var(--n-ink);
-    font-size: 0.9375rem;
-    line-height: 1.45;
-    max-width: 36rem;
   }
-  @media (min-width: 768px) { .reason-cta-text { font-size: 1rem; } }
+  @media (min-width: 768px) { .reason-text { font-size: 1rem; } }
+
+  /* Accent CTA strip under the reason cards */
+  .reason-cta {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-heliotrope));
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 24px 50px -18px rgba(155,81,224,0.45);
+    color: var(--n-white);
+  }
+  @media (min-width: 768px) { .reason-cta { padding: 28px 32px; } }
+  .reason-cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  @media (min-width: 768px) {
+    .reason-cta-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+  }
+  .reason-cta-text {
+    color: var(--n-white);
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 600;
+    max-width: 40rem;
+    margin: 0;
+  }
+  @media (min-width: 768px) { .reason-cta-text { font-size: 1.125rem; } }
   .reason-cta-btn { flex-shrink: 0; }
-  @media (max-width: 640px) { .reason-cta-btn { width: 100%; } }
+  @media (max-width: 640px) { .reason-cta-btn { width: 100%; justify-content: center; } }
 
   /* === Hero photo === */
   .hero-photo {
